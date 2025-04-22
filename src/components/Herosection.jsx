@@ -20,7 +20,7 @@ const Herosection = () => {
             <button className="text-[#1FB0FF] hover:text-white hover:bg-[#35D0FF] hover:border-2 transition duration-300 w-[150px] bg-white rounded-full py-4 px-7 font-bold text-base leading-[120%]">
               Get Started
             </button>
-            <button className="text-white hover:text-[#1FB0FF] hover:bg-white hover:border-2 transition duration-300 w-[150px] border-2 border-white rounded-full py-4 px-7 font-bold text-base leading-[120%]">
+            <button className="text-white hover:scale-75 hover:border-2 duration-300 w-[150px] border-2 border-white rounded-full py-4 px-7 font-bold text-base leading-[120%]">
               Learn More
             </button>
           </div>
