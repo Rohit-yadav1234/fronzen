@@ -17,19 +17,19 @@ const Herosection = () => {
           </p>
 
           <div className="flex  items-center justify-center lg:justify-start gap-3 sm:gap-[14px]">
-            <button className="text-[#1FB0FF] hover:text-white hover:bg-[#35D0FF] hover:border-2 transition duration-300 w-[150px] bg-white rounded-full py-2 px-4 font-bold text-base leading-[120%]">
+            <button className="text-[#1FB0FF] hover:text-white hover:bg-[#35D0FF] hover:border-2 transition duration-300 w-[150px] bg-white rounded-full py-4 px-7 font-bold text-base leading-[120%]">
               Get Started
             </button>
-            <button className="text-white hover:text-[#1FB0FF] hover:bg-white hover:border-2 transition duration-300 w-[150px] border-2 border-white rounded-full py-2 px-4 font-bold text-base leading-[120%]">
+            <button className="text-white hover:text-[#1FB0FF] hover:bg-white hover:border-2 transition duration-300 w-[150px] border-2 border-white rounded-full py-4 px-7 font-bold text-base leading-[120%]">
               Learn More
             </button>
           </div>
         </div>
       </div>
       {/* image */}
-      <div className="absolute top-[300px] sm:top-[320px] md:top-[300px] lg:top-[200px] right-0">
+      <div className="absolute top-[300px] sm:top-[320px] md:top-[320px] lg:top-[200px] right-0">
         <Image
-          className="max-w-[320px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] h-auto object-contain"
+          className="max-w-[320px] sm:max-w-[400px] md:max-w-[500px] xl:max-w-[800px] h-auto object-contain"
           src="/assets/images/truck.png"
           width="826"
           height="426"
