@@ -29,7 +29,7 @@ const Herosection = () => {
       {/* image */}
       <div className="absolute top-[300px] sm:top-[320px] md:top-[300px] lg:top-[200px] right-0">
         <Image
-          className="max-w-[320px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[800px] h-auto object-contain"
+          className="max-w-[320px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] h-auto object-contain"
           src="/assets/images/truck.png"
           width="826"
           height="426"

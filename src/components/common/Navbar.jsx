@@ -22,6 +22,7 @@ const Navbar = () => {
           width={176}
           height={74}
           alt="logo"
+         unoptimized
         />
       </a>
 
