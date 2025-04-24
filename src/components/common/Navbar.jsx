@@ -19,10 +19,7 @@ const Navbar = () => {
   // Close sidebar when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (
-        sidebarRef.current &&
-        !sidebarRef.current.contains(event.target)
-      ) {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
         setSidebar(false);
       }
     };
@@ -50,27 +47,15 @@ const Navbar = () => {
         />
       </a>
 
-      {/* Desktop Navigation */}
-      <div
-        className={`fixed max-lg:transition-all max-lg:duration-300 max-lg:ease-in-out z-50
-          lg:static flex gap-4 items-center max-lg:flex-col max-lg:items-start
-          max-lg:w-[300px] max-lg:h-screen max-lg:bg-[#000] max-lg:pt-10 max-lg:px-6 
-          ${sidebar ? "left-0" : "left-[-150%]"}`}
-      >
-        <Link href="/" className="text-lg text-white hover:underline font-medium">Home</Link>
-        <Link href="/" className="text-lg text-white hover:underline font-medium">About Us</Link>
-        <Link href="/" className="text-lg text-white hover:underline font-medium">Why Us</Link>
-        <Link href="/" className="text-lg text-white hover:underline font-medium">Services</Link>
-      </div>
-
-      {/* Sidebar with close on outside click */}
+      {/* Navigation (shared for both desktop and mobile sidebar) */}
       <div
         ref={sidebarRef}
         className={`fixed top-0 left-0 right-0 max-lg:transition-all max-lg:duration-300 max-lg:ease-in-out z-50
           flex max-lg:flex-col max-lg:gap-[20px] items-center  
-          max-lg:w-[300px] max-lg:h-screen max-lg:bg-[#21b9ff] 
-          ${sidebar ? "left-0" : "left-[-150%]"}`}
+          max-lg:w-[300px] max-lg:h-screen max-lg:bg-[#21b9ff] lg:static lg:flex-row lg:h-auto lg:bg-transparent
+          ${sidebar ? "left-0" : "left-[-150%] lg:left-0"}`}
       >
+        {/* Close button for mobile sidebar */}
         <button
           onClick={() => setSidebar(false)}
           className="text-white text-[78px] rotate-45 font-normal right-5 lg:hidden absolute top-[-30px]"
@@ -78,7 +63,7 @@ const Navbar = () => {
           +
         </button>
 
-        <ul className="flex flex-col items-center gap-5 p-1">
+        <ul className="flex flex-col lg:flex-row items-center gap-5 p-1">
           <a href="/">
             <Image
               src="/assets/images/logo.png"
@@ -89,11 +74,17 @@ const Navbar = () => {
               className="lg:hidden"
             />
           </a>
-          <Link href="/" className="text-lg text-white hover:underline font-medium">Home</Link>
-          <Link href="/" className="text-lg text-white hover:underline font-medium">About Us</Link>
-          <Link href="/" className="text-lg text-white hover:underline font-medium">Why Us</Link>
-          <Link href="/" className="text-lg text-white hover:underline font-medium">Services</Link>
+          {["Home", "About Us", "Why Us", "Services"].map((text, index) => (
+            <Link
+              key={index}
+              href="/"
+              className="text-lg text-white hover:underline font-medium cursor-pointer"
+            >
+              {text}
+            </Link>
+          ))}
 
+          {/* Mobile Button */}
           <div className="bg-white lg:hidden rounded-[100px]">
             <button
               type="submit"
@@ -116,13 +107,13 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu Button */}
-      <button onClick={() => setSidebar(!sidebar)} className="lg:hidden">
-        <Image
-          src="/assets/images/menu.svg"
-          width={40}
-          height={40}
-          alt="menu"
-        />
+      <button
+        onClick={() => setSidebar(!sidebar)}
+        className="lg:hidden flex flex-col gap-1 "
+      >
+        <div className=" w-[30px] h-[3px] bg-white rounded-[50px] "></div>
+        <div className=" w-[30px] h-[3px] bg-white rounded-[50px] "></div>
+        <div className=" w-[30px] h-[3px] bg-white rounded-[50px] "></div>
       </button>
     </nav>
   );
